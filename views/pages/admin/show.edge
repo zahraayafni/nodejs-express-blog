@@ -1,0 +1,75 @@
+@layout('layouts.admin.base')
+
+@section('title')
+<title>Zahrah's Blog Factory</title>
+@endsection
+
+@section('content')
+<div class="container">
+
+    <div class="header">
+      <h1>All Posts</h1>
+      <input id="text-search" placeholder="Type to find..." type="search">
+    </div>
+    
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th title="Field #1">Title</th>
+          <th title="Field #2">Category</th>
+          <th title="Field #3">Status</th>
+          <th title="Field #4">Timestamp</th>
+          <th title="Field #5">Claps</th>
+          <th title="Field #6">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @each(post in posts)
+          <tr>
+            <td><a href="/post/{{ post.slug }}" target="_blank">{{ post.title }}</a></td>
+            <td>{{ post.category }}</td>
+            <td>{{ post.published == true ? 'Published' : 'Draft' }}</td>
+            <td>{{ post.timestamp.toLocaleString() }}</td>
+            <td>{{ post.claps }}</td>
+            <td>
+              <a href="/admin/post/edit/{{ post._id }}" target="_blank" class="btn" style="float:left">edit</a>
+              <button type="button" id="myBtn" class="btn" data-id="{{ post._id }}">delete</button>
+            </td>
+          </tr>
+        @endeach
+      </tbody>
+    </table>
+
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Delete Post</h2>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure to delete this post?</p>
+    </div>
+    <div class="modal-footer">
+      <form method="POST" id="form-del">
+        <button type="submit" class="btn">Yes</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+@endsection
+
+@section('js')
+<script>
+  $('#myBtn').click(function(e){
+      e.preventDefault()
+      var id = $(this).attr('data-id')
+      $('#form-del').attr('action', '/admin/post/delete/' + id)
+  })
+</script>
+@endsection

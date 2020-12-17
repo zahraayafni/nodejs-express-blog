@@ -1,0 +1,67 @@
+@layout('layouts.app')
+
+@section('og')
+    <meta property="og:url" content="<? 
+     $url = 'https://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; 
+    echo htmlentities($url,ENT_QUOTES); ?>"/> 
+    <meta property="og:title" content="{{ post.title }}" />
+    <meta property="og:image" content="{{ "https://afifahfebriani.com/". post.featured_image }}" />
+    <meta property="og:type" content="website" />
+@endsection
+
+@section('title')
+<title>{{ post.title }}</title>
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+@endsection
+
+@section('content')
+<?php
+    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+?>
+<div class="container">
+    <div class="header">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.timestamp.toLocaleString() }}</p>
+    </div>
+
+    @if(post.featured_image)
+        <img src="{{ post.featured_image }}" class="image" />  
+    @endif
+
+    <div class="content fr-view">
+        {{{ post.content }}}
+    </div>
+    <div class="social" style="float: right">
+        <a class="btn-claps">
+            <span id="claps-num">{{ post.claps }}</span>
+            <i class="fas fa-star"></i>
+        </a>
+        <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $url; ?>">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</div>
+
+@endsection
+
+@section('js')
+<script>
+    $('.btn-claps').click(function(e) {
+        e.preventDefault()
+        $.ajax({
+            type: 'POST',
+            url: '/post/claps/{{ post._id }}',
+            success: function(msg){
+                $('#claps-num').html(msg.claps)
+            },
+            error: function(err) {
+                console.log(err)
+            }
+        })
+    })
+
+</script>
+@endsection

@@ -1,0 +1,49 @@
+@layout('layouts.app')
+
+@section('title')
+<title>Hi, Its me Zahrah!</title>
+@endsection
+
+@section('css')
+<script src="https://rawgit.com/layervault/jquery.typer.js/master/src/jquery.typer.js"></script>
+@endsection
+
+@section('content')
+
+<div class="about">
+  <div class="inner-about">
+    <h1>Hi, its me Zahrah!</h1><br>
+    <p class="css-typing">I <span data-typer-targets="write codes, create bugs, solve bugs, write blogs"></span></p>
+    <p class="social">
+      <a target="_blank" href="https://github.com/zahraayafni/">
+        <i class="fab fa-github"></i>
+      </a>
+      <a target="_blank" href="https://facebook.com/zahrah.a.afifah/">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/zahrah-ayu-afifah-febriani/">
+          <i class="fab fa-linkedin"></i>
+      </a>
+      <a target="_blank" href="mailto:zahrahfebriani@gmail.com">
+          <i class="fas fa-at"></i>
+      </a>
+      <a target="_blank" href="https://medium.com/@zahrahayuafifahfebriani">
+        <i class="fab fa-medium-m"></i>
+      </a>
+    </p>         
+  </div>
+</div>
+
+@endsection
+
+@section('js')
+<script>
+  (function($) {
+      "use strict";
+
+      $('[data-typer-targets]').typer();
+      $.typer.options.clearOnHighlight = false;
+
+  })(jQuery);
+</script>
+@endsection

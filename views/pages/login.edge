@@ -1,0 +1,22 @@
+@layout('layouts.app')
+
+@section('title')
+<title>Do I know you?</title>
+@endsection
+
+@section('content')
+<div class="about">
+    <div class="inner-about">
+        <h1>Do I know you?</h1>
+        <form method="POST">
+            <div class="form-inputs">
+                <div class="text-input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+              <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

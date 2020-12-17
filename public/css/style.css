@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap");
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    background-color: lightgrey;
+    color: black;
+}
+
+.menu {
+    height: 60pt;
+    width: 100%;
+    z-index: 9999;
+    /* padding-left: 12pt; */
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0pt 0pt 30pt rgba(0, 0, 0, 0.2);
+}
+
+.menu a {
+    margin-right: 12pt;
+    font-size: 13pt;
+    text-decoration: none;
+}
+
+.menu a:link,
+.menu a:visited {
+    color: #1c1c1c;
+}
+
+.logoutBtn {
+    position: fixed;
+    right: 10px;
+}
+
+.head-title {
+    text-align: center;
+    font-family: 'Roboto';
+    width: 100%;
+}
+
+.about {
+    height: calc(100% - 60pt);
+    padding-top: 60pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-about {
+    width: 100%;
+    max-width: 600pt;
+    padding: 10pt;
+}
+
+.inner-about h1 {
+    margin: 0;
+    font-size: 35pt;
+    margin-bottom: -10pt;
+}
+
+.inner-about p {
+    margin: 0;
+    margin-bottom: 8pt;
+    font-size: 15pt;
+}
+
+.social {
+    margin-bottom: 0pt;
+    padding-bottom: 10pt;
+}
+
+.social a {
+    margin-right: 5pt;
+    cursor: pointer;
+}
+
+.social a:link,
+.social a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.css-typing {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+    font-size: 44px;
+    line-height: 1.5;
+}
+
+
+/* TABLE */
+
+.container {
+    padding: 60pt 15% 0 15%;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    text-transform: uppercase;
+    border-bottom: 1px solid #0e0e0e;
+}
+
+thead th {
+    padding: 5px;
+    text-align: left;
+}
+
+tr {
+    transition: opacity 0.5s ease;
+}
+
+tr.hide {
+    opacity: 0;
+    height: 0;
+}
+
+td {
+    padding: 5px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+td a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+tr:hover td {
+    background: gray;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#text-search {
+    max-width: 240px;
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 60 10;
+    margin: 15px;
+    border: 1px solid #cccccc;
+    outline: none;
+    color: #5f6a7d;
+    font: 13px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    float: right;
+}
+
+
+/* Form  */
+
+.form-inputs {
+    padding-bottom: 100px;
+}
+
+.form-part h2 {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+.text-input,
+.radio-button,
+.check-boxes {
+    margin-bottom: 13px;
+}
+
+.text-input label,
+.radio-button label,
+.check-boxes label {
+    display: block;
+    margin-bottom: 3px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.radio-button label,
+.check-boxes label {
+    margin-bottom: 7px;
+    font-weight: 900;
+}
+
+.text-input input,
+.text-input textarea,
+.text-input select {
+    padding: 10px 10px;
+    display: block;
+    width: 100%;
+    border: solid 3px #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.text-input select {
+    width: 100%;
+}
+
+.text-input textarea {
+    height: 100px;
+}
+
+.sqr-input .text-input,
+.sqr-radio-input .radio-button,
+.sqr-check-input .check-boxes {
+    float: left;
+    width: 45%;
+}
+
+.sqr-input .text-input:nth-child(1),
+.sqr-radio-input .radio-button:nth-child(1),
+.sqr-check-input .check-boxes:nth-child(1) {
+    margin-right: 10%;
+}
+
+.cub-input .text-input {
+    float: left;
+    width: 26.66%;
+}
+
+.cub-input .text-input:nth-child(1),
+.cub-input .text-input:nth-child(2) {
+    margin-right: 10%;
+}
+
+.ns-radio-btn input[type="radio"],
+.ns-check-box input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.ns-radio-btn {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 3px 7px 0 0;
+    cursor: pointer;
+    position: relative;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 3px solid #ccc;
+    box-shadow: 0 0 1px #ccc;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+}
+
+.checkedRadio {
+    -moz-box-shadow: inset 0 0 5px 1px #ccc;
+    -webkit-box-shadow: inset 0 0 5px 1px #ccc;
+    box-shadow: inset 0 0 5px 1px #ccc;
+}
+
+.ns-radio-btn i {
+    border: 1px solid #E1E2E4;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.checkedRadio i {
+    background-color: #898A8C;
+}
+
+.ns-check-box {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 2px 7px 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+    border: 1px solid #ccc;
+}
+
+.ns-check-box i {
+    background: url('http://cdn1.iconfinder.com/data/icons/mimiGlyphs/16/check_mark.png') no-repeat center center;
+    position: absolute;
+    left: 3px;
+    bottom: -15px;
+    width: 16px;
+    height: 16px;
+    opacity: .5;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    -webkit-transform: rotateZ(-180deg);
+    -moz-transform: rotateZ(-180deg);
+    -o-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg);
+}
+
+.checkedBox {
+    -moz-box-shadow: inset 0 0 5px 1px #ccc;
+    -webkit-box-shadow: inset 0 0 5px 1px #ccc;
+    box-shadow: inset 0 0 5px 1px #ccc;
+    border-bottom-color: #fff;
+}
+
+.checkedBox i {
+    bottom: 2px;
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+}
+
+.radio-button ul li,
+.check-boxes ul li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+    margin-bottom: 7px;
+}
+
+.sqr-radio-input .radio-button ul li,
+.sqr-check-input .check-boxes ul li {
+    margin-right: 15px;
+}
+
+.radio-button ul li span {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.check-boxes ul li span {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.sqr-input .text-input .sqr-input .text-input:nth-child(1) {
+    margin-right: 15%;
+    width: 40%;
+}
+
+.margin-bottom-zero {
+    margin-bottom: 0px;
+}
+
+.btn {
+    float: right;
+    font-size: 1.0em;
+    cursor: pointer;
+    padding: 5pt 10pt;
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: dimgray;
+}
+
+.image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    text-align: justify;
+    margin: 20px 0;
+}
+
+
+/* MODAL  */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: dimgray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: lightgrey;
+    color: black;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    height: 50px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    height: 50px;
+    background-color: lightgrey;
+    color: black;
+}

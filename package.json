@@ -1,0 +1,27 @@
+{
+  "name": "afifahfebriani",
+  "version": "1.0.0",
+  "description": "Create personal blog using NodeJS and ExpressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "afifahfebriani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2",
+    "express-fileupload": "^1.2.0",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.14",
+    "mongoose-slug-generator": "^1.0.4",
+    "mongoose-url-slugs": "^1.0.2",
+    "nodemon": "^2.0.6"
+  }
+}
